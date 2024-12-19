@@ -41,7 +41,7 @@
     "editorjs-text-color-plugin": "git+https://github.com/dariox64/editorjs-text-color-plugin.git#214395c",
     "@medusajs/admin": "^7.1.15",
     "@medusajs/icons": "^1.2.1",
-    "@medusajs/ui": "^2.4.3",
+    "@medusajs/ui": "^4.0.2",
     "@yaireo/dragsort": "^1.3.1",
     "@yaireo/tagify": "^4.24.0",
     "body-parser": "^1.19.0",
