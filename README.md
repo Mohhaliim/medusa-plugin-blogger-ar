@@ -2,7 +2,7 @@
   <p align="center">
     <img alt="Medusa" src="https://i.imgur.com/1JHWUTL.png" width="200" />
   </p>
-<h1>Medusa Plugin Blogger</h1>
+<h1>Medusa Plugin Blogger English and Arabic</h1>
 <p>A blog integration for medusa</p>
 </div>
 
@@ -25,25 +25,25 @@ The Medusa-Plugin-Blogger is designed to provide a seamless user experience, uti
   <img src="https://imgur.com/JAfYqeL.png" alt="medusa-plugin-blogger rapresentation" />
 </div>
 
-# Getting started  
+# Getting started
 
 ### Installation
 
 Run the following command in the directory of the Medusa backend:
 
 ```bash
-yarn add medusa-plugin-blogger
+yarn add medusa-plugin-blogger-ar
 ```
 
 ### Add to medusa-config.js
 
 In `medusa-config.js` add the following to the `plugins` array:
-  
+
 ```js
 const  plugins = {
   	///...other plugins
   	{
-		resolve: 'medusa-plugin-blogger',
+		resolve: 'medusa-plugin-blogger-ar',
 		options: {
 			enableUI: true,
 		},
@@ -62,7 +62,7 @@ npx medusa migrations run
 ### Required dependencies
 
 A file service is required for this plugin to work.
-  
+
 # API endpoints
 
 The max size of the body that an endpoint can receive is `10000000B` which is the equivalent to `10MB`, enough to store tens of academic papers inside an article object. This is enough to store approximately **1.600.000 words** In case you go over this threshold with your article, you will not be able to save it.
@@ -163,73 +163,7 @@ EditorJS divides the body into blocks, which you can easily iterate through and 
 
 To make this more clear here is an example a body with the result after:
 ```json
-{
-  "time": 1718394016975,
-  "blocks": [
-    {
-      "id": "bmQCD-2wEi",
-      "data": {
-        "text": "Databases play a crucial role\n in the development process, but how exactly do they work? In this \narticle, we’ll dive into the internal architecture of MongoDB, a popular\n no-SQL database, to provide a comprehensive explanation."
-      },
-      "type": "paragraph"
-    },
-    {
-      "id": "pbwAdmpETJ",
-      "data": {
-        "text": "Understanding how MongoDB works behind the scenes can be incredibly useful for developers looking to leverage its unique features and capabilities. So let’s dive in!"
-      },
-      "type": "paragraph"
-    },
-    {
-      "id": "-B3th1nCj5",
-      "data": {
-        "text": "Index",
-        "level": 1
-      },
-      "type": "header"
-    },
-    {
-      "id": "VkmuZ6qh-h",
-      "data": {
-        "items": [
-          {
-            "items": [],
-            "content": "What is a database?"
-          },
-          {
-            "items": [],
-            "content": "What is MongoDB?"
-          },
-          {
-            "items": [],
-            "content": "SQL vs no-SQL databases"
-          },
-          {
-            "items": [],
-            "content": "What is JSON?"
-          },
-          {
-            "items": [],
-            "content": "What the hell is BSON?"
-          },
-          {
-            "items": [],
-            "content": "What is Mongoose?"
-          }
-        ],
-        "style": "ordered"
-      },
-      "type": "list"
-    }
-  ],
-  "version": "2.29.1"
-}
-```
-
-This is the body of the article below:
-<div align="center">
-  <img src="https://imgur.com/tUku0si.png" alt="medusa-plugin-blogger rapresentation" />
-</div>
+/* add example of the returned article here */
 
 # Architecture overview
 
@@ -239,61 +173,8 @@ Medusa-Plugin-Blogger relies on several key dependencies to provide a rich user 
 
 -   **Editor.js**: A block-styled editor that allows for rich text content creation. Editor.js is highly modular and extensible, and the plugin leverages several Editor.js tools including:
 -   **React Dropzone**: A simple React component for creating file upload zones. This is used in the blog plugin to facilitate image and file uploads directly within the admin interface.
-    
+
 -   **Tagify**: A powerful tagging library that provides an easy-to-use interface for adding and managing tags. Tagify ensures that blog articles can be tagged efficiently, enhancing content categorization and searchability.
-
-## Blog article entity
-
-The BlogArticle entity requires only draft as a mandatory column, this is already handled by the store frontend but there might be need for a custom implementation if working with API routes directly. The choice of not making more columns mandatory was made because the implementation and use the plugin depends strictly on your storefront.
-
-```typescript
-@Entity()
-export class BlogArticle extends BaseEntity {
-    @PrimaryGeneratedColumn()
-    id: string;
-
-    @Column({ nullable: true })
-    author: string;
-
-    @Column('text', { array: true, nullable: true })
-    tags: string[];
-
-    @Column({ nullable: true, unique: true })
-    seo_title: string;
-
-    @Column({ nullable: true })
-    seo_keywords: string;
-
-    @Column({ nullable: true, unique: true })
-    url_slug: string;
-
-    @Column({ nullable: true, unique: true })
-    seo_description: string;
-
-    @Column({ nullable: true })
-    thumbnail_image: string;
-
-    @Column({ nullable: true })
-    title: string;
-
-    @Column({ nullable: true })
-    subtitle: string;
-
-    @Column('json', { nullable: true, array: false })
-    body: any; // Assuming body will be a complex JSON structure
-
-    @Column("text", { array: true, nullable: true})
-    body_images: string[];
-
-    @Column({ nullable: false })
-    draft: boolean;
-
-    @BeforeInsert()
-    private beforeInsert(): void {
-      this.id = generateEntityId(this.id, "blog_article")
-    }
-}
-```
 
 # License
 
@@ -303,8 +184,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## A special thank to
 
-### Stargazers
-[![Stargazers repo roster for @MoscatelliMarco/medusa-plugin-blogger](https://reporoster.com/stars/MoscatelliMarco/medusa-plugin-blogger)](https://github.com/MoscatelliMarco/medusa-plugin-blogger/stargazers)
+### Original plugin developer MoscatelliMarco
 
-### Forkers
-[![Forkers repo roster for @MoscatelliMarco/medusa-plugin-blogger](https://reporoster.com/forks/MoscatelliMarco/medusa-plugin-blogger)](https://github.com/MoscatelliMarco/medusa-plugin-blogger/network/members)
+[![Marco Moscatelli](https://github.com/MoscatelliMarco)
+[![medusa-plugin-blogger](https://github.com/MoscatelliMarco/medusa-plugin-blogger)
