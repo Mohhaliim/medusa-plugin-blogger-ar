@@ -1,5 +1,5 @@
 import type { MedusaRequest, MedusaResponse } from "@medusajs/medusa";
-import { BlogArticle } from "../../models/blog_article";
+import { BlogArticle } from "../models/blog_article";
 import { EntityManager, Like } from "typeorm";
 import { SqlSanitizationObj } from "./sql_sanitization";
 import { convertObjToSearchQuery } from "./utils";

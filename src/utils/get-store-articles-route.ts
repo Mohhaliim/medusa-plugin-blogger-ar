@@ -1,7 +1,7 @@
 import type { MedusaRequest, MedusaResponse } from "@medusajs/medusa";
 import { EntityManager, FindManyOptions, Like } from "typeorm";
 
-import { BlogArticle } from "../../models/blog_article";
+import { BlogArticle } from "../models/blog_article";
 import { SqlSanitizationObj } from "./sql_sanitization";
 import { parseQueryString } from "./parse_query_params";
 

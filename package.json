@@ -1,6 +1,6 @@
 {
   "name": "medusa-plugin-blogger-ar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A blog implementation for MedusaJS supporting English and Arabic",
   "author": "Marco Moscatelli (https://marcomoscatelli.com), extended and modified by Mohamed Abdelhalim (https://mohamedabdelhalim.vercel.app/)",
   "license": "MIT",
