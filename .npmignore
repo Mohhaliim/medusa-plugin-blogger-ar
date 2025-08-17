@@ -1,0 +1,35 @@
+# Source files (only include built dist)
+src/
+tsconfig*.json
+.env*
+.DS_Store
+uploads/
+node_modules/
+yarn-error.log
+.idea/
+coverage/
+package-lock.json
+yarn.lock
+medusa-db.sql
+build/
+.cache/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Development files
+.git/
+.github/
+.vscode/
+*.md
+!README.md
+
+# Test files
+**/*.test.js
+**/*.test.ts
+**/*.spec.js
+**/*.spec.ts
+jest.config.js

@@ -4,6 +4,13 @@
   "description": "A blog implementation for MedusaJS supporting English and Arabic",
   "author": "Marco Moscatelli (https://marcomoscatelli.com), extended and modified by Mohamed Abdelhalim (https://mohamedabdelhalim.vercel.app/)",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
   "keywords": [
     "sqlite",
     "postgres",
